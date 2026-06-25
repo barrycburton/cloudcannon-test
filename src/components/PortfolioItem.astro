@@ -18,7 +18,6 @@ const formatted = new Intl.DateTimeFormat('en-GB', {
   .format(date)
   .replaceAll('/', '.');
 
-const parts = emphasis ? headline.split('{emphasis}') : [headline];
 ---
 
 <div class="blog-header">
@@ -29,17 +28,7 @@ const parts = emphasis ? headline.split('{emphasis}') : [headline];
   <div class="blog-article">
     <img src={cover} alt={title} />
     <h2>
-      {
-        emphasis ? (
-          <>
-            {parts[0]}
-            <span>{emphasis}</span>
-            {parts[1]}
-          </>
-        ) : (
-          summary
-        )
-      }
+      {summary}
     </h2>
     <a href={href}>
       <svg

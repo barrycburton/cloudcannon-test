@@ -9,13 +9,6 @@ collections_config:
     disable_add: true
     disable_add_folder: false
     disable_file_actions: false
-  featured:
-    path: src/content/featured
-    icon: gesture
-    disable_url: false
-    disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
   posts:
     path: src/content/posts
     icon: event_available

@@ -44,7 +44,7 @@ Hamburger appears at ≤1030, single column at ≤768.
 | [`Footer`](src/components/Footer.astro)                   | Subpage footer                         |
 | [`StickyHeader`](src/components/StickyHeader.astro)       | "Header"                               |
 | [`PortfolioItem`](src/components/PortfolioItem.astro)     | Image hero card (scroll-snaps)         |
-| [`Sidebar`](src/components/Sidebar.astro)                 | Marquee + featured list + Circle       |
+| [`Sidebar`](src/components/Sidebar.astro)                 | Newsletter items                       |
 
 ## Layouts
 

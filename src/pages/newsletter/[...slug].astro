@@ -46,7 +46,9 @@ const fmt = (d: Date) =>
   <hr style="border:0;border-top:1px solid #94918f;margin:32px 0;" />
 
   <div class="prose">
-    <Content />
+    <editable-text data-prop="@content"> 
+      <Content />
+    </editable-text>
   </div>
 
   <nav class="post-nav" aria-label="Adjacent Letters">

@@ -75,14 +75,13 @@ author: 'Jane Doe'
 date: 2026-01-01
 cover: 'https://images.unsplash.com/...'
 tags: ['attention', 'quiet']
-featured: true # appear on the magazine cover
 pageNumber: 'NO. 01' # optional, used by the sticky header
 ---
 
 Long-form body.
 ```
 
-Sidebar entries (`src/content/featured/`) and portfolio items (`src/content/work/`) use smaller schemas; see `content.config.ts`.
+Sidebar entries (`src/content/posts/`) and portfolio items (`src/content/work/`) use smaller schemas; see `content.config.ts`.
 
 ## Adding a subpage
 

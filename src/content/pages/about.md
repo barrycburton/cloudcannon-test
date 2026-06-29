@@ -4,3 +4,5 @@ in-menu: true
 ---
 
 About blah blah blah
+
+[Get in touch](/contact)

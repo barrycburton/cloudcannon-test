@@ -1,9 +1,10 @@
 ---
 title: Other Work Title
-date: 2021-08-21T00:00:00Z
-cover: /uploads/img-1155.jpeg
-summary: Description of the other thing
-tags:
-  - tag2
-  - tag3
+date: 2021-08-21T00:00:00.000Z
+image: /uploads/img-1036.jpeg
+categories:
+  - category2
+  - category3
+featured: true
 ---
+Description of the other thing

@@ -6,7 +6,7 @@ import StickyHeader from '../components/StickyHeader.astro';
 import PortfolioItem from '../components/PortfolioItem.astro';
 import Sidebar from '../components/Sidebar.astro';
 
-const posts = await getCollection('posts');
+const newsletter = await getCollection('newsletter');
 const work = await getCollection('work');
 ---
 
@@ -27,7 +27,7 @@ const work = await getCollection('work');
 	          <PortfolioItem
 	            title={item.data.title}
 	            date={item.data.date}
-	            cover={item.data.cover}
+	            image={item.data.image}
 	            summary={item.data.summary}
 				order={item.data.order}
 	            href={`/work/${item.id}`}
@@ -55,6 +55,6 @@ const work = await getCollection('work');
 		</div>
 	</div>
 
-    <Sidebar entries={posts} />
+    <Sidebar entries={newsletter} />
   </div>
 </BaseLayout>

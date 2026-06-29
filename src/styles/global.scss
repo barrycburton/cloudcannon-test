@@ -215,7 +215,7 @@ body {
       height: 260px;
       max-height: 22vh;
       width: 100%;
-      object-fit: cover;
+      object-fit: image;
       filter: grayscale(1);
     }
     
@@ -743,7 +743,7 @@ html {
   img {
     width: 100%;
     height: clamp(220px, 40vh, 420px);
-    object-fit: cover;
+    object-fit: image;
     filter: grayscale(1);
     display: block;
   }
@@ -957,10 +957,10 @@ html {
     border-bottom: 1px solid $border-color;
   }
 
-  &__cover img {
+  &__image img {
     width: 100%;
     height: 160px;
-    object-fit: cover;
+    object-fit: image;
     filter: grayscale(1);
     display: block;
   }
@@ -995,7 +995,7 @@ html {
     max-width: 60ch;
   }
 
-  &__tags {
+  &__categories {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -1073,7 +1073,7 @@ html {
   }
 }
 
-.tag-list {
+.category-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -1173,7 +1173,7 @@ html {
   img {
     width: 100%;
     height: 260px;
-    object-fit: cover;
+    object-fit: image;
     filter: grayscale(1);
     display: block;
     margin-bottom: 14px;

@@ -28,7 +28,7 @@ No gradients, shadows, or accent colors.
 
 Two modes:
 
-1. **Magazine cover** (`/`): bespoke 4-col grid (`15% 20% 35% 30%`), `100dvh`, no `PageLayout`.
+1. **Magazine image** (`/`): bespoke 4-col grid (`15% 20% 35% 30%`), `100dvh`, no `PageLayout`.
 2. **Subpage**: `PageLayout` with top nav, optional hero, `.page-main` (max 920px), footer.
 
 **Breakpoints:** 1400, 1260, 1030, 768, 560.
@@ -63,7 +63,7 @@ Long-form copy opts in to `.prose`:
 </PageLayout>
 ```
 
-Gives you 18px / 1.65, max 65ch, Space Grotesk H2/H3, Playfair blockquote, grayscale `<img>`. Do not wrap card grids, forms, or work/tag lists; `.prose a` underlines everything inside.
+Gives you 18px / 1.65, max 65ch, Space Grotesk H2/H3, Playfair blockquote, grayscale `<img>`. Do not wrap card grids, forms, or work/category lists; `.prose a` underlines everything inside.
 
 ## Imagery
 

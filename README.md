@@ -41,7 +41,7 @@ npm run build    # static output to ./dist
 
 - Full-viewport magazine homepage (`/`)
 - `/newsletter` index + `/newsletter/[slug]` MDX post pages with prev/next
-- `/tags/[tag]` pages generated from post frontmatter
+- `/categories/[category]` pages generated from post frontmatter
 - `/about`, `/work` (data-driven), `/404`
 - RSS at `/rss.xml`, OG/Twitter meta in `BaseLayout`
 - `PageLayout` + `_template.astro.example` for creating new pages
@@ -54,7 +54,7 @@ src/
 ├── content/         newsletter/ (md+mdx), work/
 ├── content.config.ts
 ├── layouts/         BaseLayout, PageLayout
-├── pages/           index, newsletter/, tags/, about, work, 404, rss.xml
+├── pages/           index, newsletter/, categories/, about, work, 404, rss.xml
 └── styles/global.scss
 ```
 
@@ -62,7 +62,7 @@ See [STYLEGUIDE.md](STYLEGUIDE.md) for tokens, type scale, and a guide for stayi
 
 ## Authoring a post
 
-Drop a `.md` or `.mdx` file in `src/content/posts/`:
+Drop a `.md` or `.mdx` file in `src/content/newsletter/`:
 
 ```md
 ---
@@ -70,18 +70,18 @@ title: 'Your Article Title'
 bigTitle: 'Hero'
 emphasis: 'Word' # optional, italicised inside the headline
 headline: 'Sharing The {emphasis} Acclaim About Motivation'
-excerpt: 'Teaser shown on the cover and in /blog.'
+excerpt: 'Teaser shown on the image and in /blog.'
 author: 'Jane Doe'
 date: 2026-01-01
-cover: 'https://images.unsplash.com/...'
-tags: ['attention', 'quiet']
+image: 'https://images.unsplash.com/...'
+categories: ['attention', 'quiet']
 pageNumber: 'NO. 01' # optional, used by the sticky header
 ---
 
 Long-form body.
 ```
 
-Sidebar entries (`src/content/posts/`) and portfolio items (`src/content/work/`) use smaller schemas; see `content.config.ts`.
+Sidebar entries (`src/content/newsletter/`) and portfolio items (`src/content/work/`) use smaller schemas; see `content.config.ts`.
 
 ## Adding a subpage
 

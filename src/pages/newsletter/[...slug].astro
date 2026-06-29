@@ -3,16 +3,16 @@ import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  const newsletter = (await getCollection('newsletter', ({ data }) => !data.draft)).sort(
     (a, b) => +b.data.date - +a.data.date,
   );
 
-  return posts.map((post, i) => ({
+  return newsletter.map((post, i) => ({
     params: { slug: post.id },
     props: {
       post,
-      prev: posts[i + 1],
-      next: posts[i - 1],
+      prev: newsletter[i + 1],
+      next: newsletter[i - 1],
     },
   }));
 }
@@ -26,7 +26,7 @@ const fmt = (d: Date) =>
 
 <PageLayout
   title={post.data.title}
-  heroImage={post.data.cover}
+  heroImage={post.data.image}
   pageTitle={`${post.data.title} — My Name`}
 >
   <div class="post-meta">
@@ -34,10 +34,10 @@ const fmt = (d: Date) =>
   </div>
 
   {
-    post.data.tags.length > 0 && (
-      <div class="tag-list" style="margin-top: 24px;">
-        {post.data.tags.map((tag) => (
-          <a href={`/tags/${tag}`}>{tag}</a>
+    post.data.categories.length > 0 && (
+      <div class="category-list" style="margin-top: 24px;">
+        {post.data.categories.map((category) => (
+          <a href={`/categories/${category}`}>{category}</a>
         ))}
       </div>
     )

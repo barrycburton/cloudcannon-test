@@ -3,21 +3,21 @@ import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const newsletter = await getCollection('newsletter', ({ data }) => !data.draft);
   const work = await getCollection('work');
-  const tags = new Set<string>();
-  posts.forEach((p) => p.data.tags.forEach((t) => tags.add(t)));
-  work.forEach((i) => i.data.tags.forEach((t) => tags.add(t)));
+  const categories = new Set<string>();
+  newsletter.forEach((p) => p.data.categories.forEach((t) => categories.add(t)));
+  work.forEach((i) => i.data.categories.forEach((t) => categories.add(t)));
 
-  return [...tags].map((tag) => ({
-    params: { tag },
+  return [...categories].map((category) => ({
+    params: { category },
     props: {
-      tag,
-      posts: posts
-        .filter((p) => p.data.tags.includes(tag))
+      category,
+      newsletter: newsletter
+        .filter((p) => p.data.categories.includes(category))
         .sort((a, b) => +b.data.date - +a.data.date),
 	  work: work
-	    .filter((i) => i.data.tags.includes(tag))
+	    .filter((i) => i.data.categories.includes(category))
 	    .sort((a, b) => +b.data.date - +a.data.date),
     },
   }));
@@ -28,22 +28,22 @@ export async function getExcerpt(post) {
   return remarkPluginFrontmatter.excerpt
 }
 
-const { tag, posts, work } = Astro.props;
+const { category, newsletter, work } = Astro.props;
 const fmt = (d: Date) =>
   `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`;
 ---
 
 <PageLayout
-  title={`#${tag}`}
+  title={`#${category}`}
   eyebrow="Tag"
-  description={`${posts.length + work.length} item${posts.length + work.length === 1 ? '' : 's'} tagged ${tag}.`}
+  description={`${newsletter.length + work.length} item${newsletter.length + work.length === 1 ? '' : 's'} categoryged ${category}.`}
 >
   <div class="post-list">
     {
-      posts.map((post) => (
+      newsletter.map((post) => (
         <a class="post-card" href={`/newsletter/${post.id}`}>
-          <div class="post-card__cover">
-            <img src={post.data.cover} alt="" loading="lazy" />
+          <div class="post-card__image">
+            <img src={post.data.image} alt="" loading="lazy" />
           </div>
           <div>
             <div class="post-card__meta">
@@ -60,8 +60,8 @@ const fmt = (d: Date) =>
     {
       work.map((item) => (
         <a class="post-card" href={`/work/${item.id}`}>
-          <div class="post-card__cover">
-            <img src={item.data.cover} alt="" loading="lazy" />
+          <div class="post-card__image">
+            <img src={item.data.image} alt="" loading="lazy" />
           </div>
           <div>
             <div class="post-card__meta">

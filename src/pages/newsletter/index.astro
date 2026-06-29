@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 
-const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+const newsletter = (await getCollection('newsletter', ({ data }) => !data.draft)).sort(
   (a, b) => +b.data.date - +a.data.date,
 );
 
@@ -21,12 +21,12 @@ const fmt = (d: Date) =>
 >
   <div class="post-list">
     {
-      posts.map((post) => {
+      newsletter.map((post) => {
 	    
         return (
           <a class="post-card" href={`/newsletter/${post.id}`}>
-            <div class="post-card__cover">
-              <img src={post.data.cover} alt="" loading="lazy" />
+            <div class="post-card__image">
+              <img src={post.data.image} alt="" loading="lazy" />
             </div>
             <div>
               <div class="post-card__meta">
@@ -35,10 +35,10 @@ const fmt = (d: Date) =>
               <h2 class="post-card__title">
                 {post.data.title}
               </h2>
-              {post.data.tags.length > 0 && (
-                <div class="post-card__tags">
-                  {post.data.tags.map((tag) => (
-                    <span>{tag}</span>
+              {post.data.categories.length > 0 && (
+                <div class="post-card__categories">
+                  {post.data.categories.map((category) => (
+                    <span>{category}</span>
                   ))}
                 </div>
               )}

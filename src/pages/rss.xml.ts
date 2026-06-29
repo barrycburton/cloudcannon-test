@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
-  const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  const newsletter = (await getCollection('newsletter', ({ data }) => !data.draft)).sort(
     (a, b) => +b.data.date - +a.data.date,
   );
 
@@ -11,13 +11,13 @@ export async function GET(context: APIContext) {
     title: 'barry',
     description: 'site description.',
     site: context.site ?? 'https://example.com',
-    items: posts.map((post) => ({
+    items: newsletter.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
       description: post.data.excerpt,
       author: post.data.author,
       link: `/newsletter/${post.id}`,
-      categories: post.data.tags,
+      categories: post.data.categories,
     })),
   });
 }

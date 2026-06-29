@@ -32,18 +32,20 @@ const fmt = (d: Date) =>
   </div>
 
   {
-    item.data.tags.length > 0 && (
-      <div class="tag-list" style="margin-top: 24px;">
-        {item.data.tags.map((tag) => (
-          <a href={`/tags/${tag}`}>{tag}</a>
+    item.data.categories.length > 0 && (
+      <div class="category-list" style="margin-top: 24px;">
+        {item.data.categories.map((category) => (
+          <a href={`/categories/${category}`}>{category}</a>
         ))}
       </div>
     )
   }
-  
-  <div class="work-item__summary">{item.data.summary}</div>
 
-  <img data-editable="image" data-prop-src="cover" src={item.data.cover} alt="" loading="lazy" />
+  <img data-editable="image" data-prop-src="image" src={item.data.image} alt="" loading="lazy" />
+  
+  <div class="work-item__summary">
+    <Content />
+  </div>
 
   <nav class="post-nav" aria-label="Adjacent Work">
     {

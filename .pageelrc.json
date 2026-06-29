@@ -21,7 +21,7 @@
     "postFileTypes": ".md,.mdx",
     "imageFileTypes": "image/*",
     "publishDateSource": "file",
-    "imageCompressionEnabled": false,
+    "imageCompressionEnabled": true,
     "maxImageSize": 500,
     "imageResizeMaxWidth": 1024
   },

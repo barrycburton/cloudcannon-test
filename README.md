@@ -14,6 +14,8 @@
 - Add Component for Contact form
 - Add Component for MailChimp newsletter form
 - Add Mailchimp RSS integration for Newsletter
+- Move Sveltia config out of Astro config into a dedicated config file
+- Create custom Github App to handle Sveltia authentication
 
 Based on Self Esteem (Astro Template), magazine-style editorial template built with [Astro](https://astro.build). Original layout by [Aysenur Turk](https://codepen.io/TurkAysenur/pen/gOmMgpx), re-implemented here as a full project.
 
